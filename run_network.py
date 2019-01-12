@@ -27,11 +27,10 @@ def run_transfer(x, net):
     output[1] += 116.779
     output[2] += 123.680
     output /= 255.0
-    output = output.transpose(1, 2, 0)
+    output = output.transpose(2, 1, 0)
 
     # show the original frame along with the output neural style
     # transfer
-    #cv2.imshow("Input", frame)
     cv2.imshow("Output", output)
     key = cv2.waitKey(1) & 0xFF
 

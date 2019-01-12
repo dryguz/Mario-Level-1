@@ -80,11 +80,11 @@ class Control(object):
             pg.display.update()
 
             # added by M.D. -------------------------
-            try:
-                x = pg.surfarray.array3d(pg.display.get_surface())
-                run_transfer(x, net)
-            except (RuntimeError, TypeError, NameError):
-                pass
+            #try:
+                #x = pg.surfarray.array3d(pg.display.get_surface())
+            run_transfer(pg.surfarray.array3d(pg.display.get_surface()), net)
+            #except (RuntimeError, TypeError, NameError):
+            #    pass
             # ---------------------------------------
 
             self.clock.tick(self.fps)
